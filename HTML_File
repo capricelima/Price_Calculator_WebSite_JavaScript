@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crochet Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<h1>Price Calculator for Crochet Pieces</h1>
+<p> Calculator created to calculate final prices for crochet pieces, using certain fixed and variable cost variables.</p>
+
+<div class = 'box1'>
+    <h2>Cost List</h2>
+        <form onsubmit="CalculationCrochet(event);">
+        
+            <h4>Product name: <input type='string' id='name' placeholder="Choose a name"><h4>
+            <h4>Yarn: <input type='text' id='yarn' placeholder="Amount of yarn used" step="any"></h4>
+            <h4>Eyes: <input type='number' id='eyes' placeholder="Number of eyes" step="any"></h4>
+            <h4>Fulfillment: <input type='number' id='fill' placeholder="Amount of fulfillment" step="any"></h4>
+            <h4>Time spent: <input type='number' id='time' placeholder="Time spent in hours" step="any"></h4>
+            <h4>Piece's Size: <select type='text' id='piece_size' placeholder="Time spent in hours" step="any">
+                <option value="small">Small Piece</option>
+                <option value="big">Big Piece</option>
+            </select></h4>
+            <h4>Accessories: <input type='number' id='ring' placeholder="Number of accessories" step="any"></h4>
+            <h4>Others Costs: <input type='number' id='other' placeholder="Another cost in euros" step="any"></h4>
+            <button class='button' type='submit'> Calculate...</button>
+            <h3>Product final price: €<span id='total'></span></h3>
+            <h3>Material Total Cost: €<span id='material_total_cost'></span></h3>
+            <h3>Final Profit: €<span id = 'final_profit'></span></h3>
+            <button class='button' id="action">Download csv</button>
+        </form>
+</div>
+        
+    
+<script src="projeto.js"></script>
+        
+</body>
+
+</html>
