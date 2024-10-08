@@ -1,0 +1,61 @@
+function CalculationCrochet(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const yarn = parseFloat(document.getElementById("yarn").value) || 0;
+    const eyes = parseFloat(document.getElementById("eyes").value) || 0;
+    const fill = parseFloat(document.getElementById("fill").value) || 0;
+    const time = parseFloat(document.getElementById("time").value) || 0;
+    const ring = parseFloat(document.getElementById("ring").value) || 0;
+   
+    const other = parseFloat(document.getElementById("other").value) || 0;
+    const piece_size = document.getElementById('piece_size').value || "";
+    
+    console.log('name:', name);
+    console.log("yarn:", yarn);
+    console.log("eyes:", eyes);
+    console.log("fill:", fill);
+    console.log("time:", time);
+    console.log("ring:", ring);
+    console.log("other:", other);
+    console.log("piece_size", piece_size);
+
+    let eye_tax =  0.04;
+    let yarn_tax = 3;
+    let fill_tax = 0.02;
+    let ring_tax = 0.10;
+    let pack_tax = 0;
+    let time_cost = 0
+
+    const yarn_cost = yarn_tax*yarn
+    const eye_cost = eye_tax*eyes;
+    const fill_cost = fill_tax*fill;
+    const ring_cost = ring_tax*ring;
+
+
+    switch(piece_size){
+        case 'small':
+            time_cost = time*3;
+            pack_tax = 0.09;
+            break
+        case 'big':
+            time_cost = time*4;
+            pack_tax = 0.50;
+            break
+        default:
+           break 
+        }
+
+    const material_total_cost = yarn_cost + eye_cost + fill_cost + ring_cost + pack_tax + other
+    const partial = material_total_cost+time_cost
+    const profit = partial*0.10
+    const total = partial + profit
+    document.getElementById("total").textContent = total.toFixed(2);
+    document.getElementById('material_total_cost').textContent = material_total_cost.toFixed(2);
+
+    const final_profit = total - material_total_cost 
+    document.getElementById("final_profit").textContent = final_profit.toFixed(2);
+
+    console.log("partial", partial)
+    console.log('final_profit', final_profit)
+
+    }
