@@ -15,10 +15,10 @@ This project was developed with the following technologies:
 🖥️ HTML, CSS  and JavaScript
 
 ## Clone this repository
-git clone https://github.com/capricelima/-Crochet_Piece_Calculator.git
+git clone https://github.com/capricelima/Price_Calculator_WebSite_JavaScript.git
 
 ## Enter the directory
-cd -Crochet_Piece_Calculator
+cd Price_Calculator_WebSite_JavaScript
 
 ## 📝 License
 This project is unlicensed and is free to use.
